@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #242839;
+}
+h2 {
+  position: relative;
+  font-size: 14vw;
+  color: #242839;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.3vw #383d52;
+}
+h2::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  color: aqua;
+  -webkit-text-stroke: 0vw #383d52;
+  border-right: 2px solid aqua;
+  overflow: hidden;
+}
+h2:hover::before {
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
